@@ -123,5 +123,5 @@ class Scss(object):
         if not os.path.exists(op.dirname(dest_path)):
             os.makedirs(op.dirname(dest_path))
         with codecs.open(dest_path, 'w', 'utf-8') as file_out:
-            with open(asset) as file_in:
+            with codecs.open(asset, encoding='utf-8') as file_in:
                 file_out.write(self.compiler.compile_string(file_in.read()))
